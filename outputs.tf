@@ -10,12 +10,12 @@ output "vpc_cidr_block" {
   value       = module.vpc.vpc_cidr_block
 }
 
-output "private_subnets" {
+output "private_subnets_ids" {
   description = "Lista de IDs de las subnets privadas"
   value       = module.vpc.private_subnets
 }
 
-output "public_subnets" {
+output "public_subnets_ids" {
   description = "Lista de IDs de las subnets públicas"
   value       = module.vpc.public_subnets
 }
@@ -35,5 +35,24 @@ output "nat_gateway_ids" {
   value       = module.vpc.natgw_ids
 }
 
+output "private_route_table_ids" {
+  description = "Lista de IDs de route tables privadas"
+  value       = module.vpc.private_route_table_ids
+}
+
+output "public_route_table_ids" {
+  description = "Lista de IDs de route tables públicas"
+  value       = module.vpc.public_route_table_ids
+}
+
+output "alb_sg_id" {
+  description = "El ID del Security Group del Application Load Balancer"
+  value       = module.alb_sg.security_group_id
+}
+
+output "fargate_sg_id" {
+  description = "El ID del Security Group de las tareas de Fargate"
+  value       = module.fargate_sg.security_group_id
+}
 
 

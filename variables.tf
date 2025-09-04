@@ -1,3 +1,6 @@
+# ----------------------------------------------------
+# Define las variables
+# ----------------------------------------------------
 variable "aws_region" {
   type        = string
   description = "Región que usa el provider AWS"
@@ -34,3 +37,16 @@ variable "private_subnet_cidrs" {
   description = "Una lista de CIDRs para las subredes privadas"
   default     = ["10.0.101.0/24", "10.0.102.0/24"]
 }
+
+variable "app_port" {
+  description = "El puerto de la aplicación que se ejecutará en los contenedores"
+  type        = number
+  default     = 80
+}
+
+variable "container_image" {
+  type        = string
+  description = "La URL de la imagen del contenedor (ej. NGINX)"
+  default     = "nginx:latest"
+}
+

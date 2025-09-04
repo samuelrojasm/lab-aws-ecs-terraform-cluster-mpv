@@ -1,7 +1,7 @@
 # Security Group para ALB usando el módulo oficial
 module "alb_security_group" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "~> 6.0"
+  version = "~> 5.0"
 
   name        = "${var.project_name}-alb-sg"
   description = "Permitir el tráfico web entrante al Application Load Balancer"
@@ -48,7 +48,7 @@ module "alb_security_group" {
 # Security Group para ECS Tasks de Fargate usando el módulo oficial
 module "ecs_tasks_sg" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "~> 6.0"
+  version = "~> 5.0"
 
   name        = "${var.project_name}-ecs-tasks-sg"
   description = "Permitir el tráfico del ALB a las tareas de Fargate"

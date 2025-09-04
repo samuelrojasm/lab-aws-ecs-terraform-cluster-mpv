@@ -47,12 +47,25 @@ output "public_route_table_ids" {
 
 output "alb_sg_id" {
   description = "El ID del Security Group del Application Load Balancer"
-  value       = module.alb_sg.security_group_id
+  value       = module.alb_security_group.security_group_id
 }
 
 output "fargate_sg_id" {
   description = "El ID del Security Group de las tareas de Fargate"
-  value       = module.fargate_sg.security_group_id
+  value       = module.ecs_tasks_sg.security_group_id
 }
 
+output "ecs_task_execution_role_arn" {
+  description = "El ARN del rol de ejecución de la tarea de ECS."
+  value       = aws_iam_role.ecs_task_execution_role.arn
+}
 
+output "ecs_task_role_arn" {
+  description = "El ARN del rol de la tarea de ECS."
+  value       = aws_iam_role.ecs_task_role.arn
+}
+
+output "alb_dns_name" {
+  description = "El nombre DNS del Application Load Balancer"
+  value       = aws_lb.main.dns_name
+}

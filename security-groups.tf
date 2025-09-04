@@ -57,7 +57,7 @@ module "ecs_tasks_sg" {
   # Regla de entrada para permitir el tráfico desde el Security Group del ALB
   ingress_with_source_security_group_id = [
     {
-      description              = "Tráfico de la aplicación desde el ALB"
+      description              = "App traffic from ALB"
       from_port                = var.app_port
       to_port                  = var.app_port
       protocol                 = "tcp"

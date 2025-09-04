@@ -4,7 +4,7 @@ module "alb_security_group" {
   version = "~> 5.0"
 
   name        = "${var.project_name}-alb-sg"
-  description = "Permitir el tráfico web entrante al Application Load Balancer"
+  description = "Permitir el trafico web entrante al Application Load Balancer"
   vpc_id      = module.vpc.vpc_id
 
   # Reglas de entrada para permitir tráfico HTTP y HTTPS desde cualquier lugar
@@ -51,7 +51,7 @@ module "ecs_tasks_sg" {
   version = "~> 5.0"
 
   name        = "${var.project_name}-ecs-tasks-sg"
-  description = "Permitir el tráfico del ALB a las tareas de Fargate"
+  description = "Permitir el trafico del ALB a las tareas de Fargate"
   vpc_id      = module.vpc.vpc_id
 
   # Regla de entrada para permitir el tráfico desde el Security Group del ALB
